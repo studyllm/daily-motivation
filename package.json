@@ -1,0 +1,55 @@
+{
+  "name": "daily-motivation",
+  "displayName": "Daily Motivation",
+  "description": "每日励志语录，为你的编程之路加油打气",
+  "version": "0.0.1",
+  	"engines": {
+		"vscode": "^1.74.0"
+	},
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+   "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    		"commands": [
+			{
+				"command": "daily-motivation.showMotivation",
+				"title": "Daily Motivation: 获取今日励志语录"
+			},
+			{
+				"command": "daily-motivation.randomMotivation",
+				"title": "Daily Motivation: 随机励志语录"
+			},
+			{
+				"command": "daily-motivation.showInStatusBar",
+				"title": "Daily Motivation: 在状态栏显示励志语录"
+			},
+			{
+				"command": "daily-motivation.debug",
+				"title": "Daily Motivation: 调试信息"
+			}
+		]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.103.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "eslint": "^9.32.0",
+    "typescript": "^5.9.2",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
